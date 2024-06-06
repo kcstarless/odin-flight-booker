@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_06_113336) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_06_230309) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_06_113336) do
     t.string "airport_code", limit: 3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["airport_code"], name: "index_airports_on_airport_code", unique: true
   end
 
   create_table "flights", force: :cascade do |t|

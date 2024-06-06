@@ -1,0 +1,5 @@
+<h2>Odin Flight Booker</h2>
+
+<%= form_with(url: flights_path, method: :get) do |form| %>
+    <%= form.collection_select :departure_airport_id, @depart_airports, :id, :airport_code, { prompt: "Departing Airport..." } %>
+<% end %>
