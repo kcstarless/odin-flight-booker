@@ -14,3 +14,5 @@ Step 4 would be done via integration of something like Paypal, via a gem.
 ## Learning
 New technique/skills/methods learnt
     1. Seeding database using db/seed.rb
+    2. Simple validations.
+    
