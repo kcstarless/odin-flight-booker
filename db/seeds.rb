@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Airport.destroy_all
+
+Airport.create(airport_code: 'JFK')
+Airport.create(airport_code: 'MEL')
+Airport.create(airport_code: 'SYD')
+Airport.create(airport_code: 'CGK')
+Airport.create(airport_code: 'ICN')
+Airport.create(airport_code: 'KIX')
+
+p "create #{Airport.count} airports"
