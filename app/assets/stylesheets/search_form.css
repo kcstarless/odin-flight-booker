@@ -1,0 +1,103 @@
+/* Apply styles to the select element */
+select.search-dropdown {
+    /* Set width to make sure the dropdown list is wide enough */
+    width: 250px;
+    /* Add some padding for better readability */
+    padding: 8px 12px;
+    /* Add a border to the dropdown list */
+    border: 1px solid #ccc;
+    /* Add some rounded corners for a modern look */
+    border-radius: 4px;
+    /* Add a box shadow for depth */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Change the background color to a light shade */
+    background-color: #fff;
+    /* Change the font size and family */
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    /* Add a subtle hover effect */
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Apply styles when the dropdown list is hovered */
+  select.search-dropdown:hover {
+    /* Darken the border color */
+    border-color: #999;
+  }
+  
+  /* Apply styles when the dropdown list is focused */
+  select.search-dropdown:focus {
+    /* Change the border color to indicate focus */
+    border-color: #1763b4; /* Blue color */
+    /* Add a box shadow to indicate focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  }
+
+  /* Apply styles to the input container */
+  .input-container {
+    /* Add some spacing around the input container */
+    margin-bottom: 20px; /* Adjust the value as needed */
+  }
+
+  /* Styles for date input */
+.date-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  margin-bottom: 10px; /* Optional: Add some space below the input */
+}
+
+/* Styles for datetime input */
+.datetime-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  margin-bottom: 10px; /* Optional: Add some space below the input */
+}
+
+.search-button {
+  width: 250px;
+  padding: 10px 20px; /* Adjust padding as needed */
+  font-size: 16px;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #0056b3; /* Button background color on hover */
+}
+
+/* Styles for the flights list */
+.flights-list {
+  max-width: 600px;
+  margin: 0px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.flights-list li {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.flights-list li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Styles for the no flights message */
+.no-flights-message {
+  margin: 20px auto;
+  color: #999;
+}

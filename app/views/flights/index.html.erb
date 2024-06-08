@@ -1,5 +1,48 @@
 <h2>Odin Flight Booker</h2>
 
+<% if flash[:alert] %>
+  <p class="alert"><%= flash[:alert] %></p>
+<% end %>
+
+<div class="form-container">
+    <%= form_with(url: flights_path, method: :get) do |form| %>
+        <%# <%= form.collection_select :departing_airport_id, @depart_airports, :first, :last, { prompt: "Select a deparure airport..." } %>
+        <div class="input-container">
+            <%= form.select(:departure_airport_id, @airports, { prompt: "Select a departure airport..." }, { class: "search-dropdown" }) %>
+        </div>
+        <div class="input-container">
+            <%= form.select(:arrival_airport_id, @airports, { prompt: "Select a arrival airport..." }, { class: "search-dropdown" }) %>
+        </div>
+        <div class="input-container">
+            <%= form.select(:flight_date_time, @dep_date, { prompt: "Select a departure date..." }, { class: "search-dropdown" }) %>
+        </div>
+        <div class="input-container">
+             <%= form.select :ticket_count, (1..4).to_a, { prompt: "Number of passengers..." }, { class: "search-dropdown" } %>
+        </div>
+         <%= form.submit "Search Flight", class: "search-button" %>
+    <% end %>
+</div>
+
+
 <%= form_with(url: flights_path, method: :get) do |form| %>
-    <%= form.collection_select :departure_airport_id, @depart_airports, :id, :airport_code, { prompt: "Departing Airport..." } %>
+    <% if @flights.present? %>
+    <h2>All Available Flights</h2>
+    <ul class="flights-list">
+        <% @flights.each do |flight| %>
+        <li>
+            <%= form.radio_button :selected_flight_id, flight.id %>
+            Flight Date - <%= flight.flight_date_time %><br>
+            Departure Airport - <%= flight.departure_airport.airport_code %> ===> Arrival Airport - <%= flight.arrival_airport.airport_code %><br>
+            
+            Flight duration - <%= flight.flight_duration %> minutes
+            <!-- Add other flight details here -->
+        </li>
+        <% end %>
+    </ul>
+         <%= form.hidden_field :ticket_count, value: params[:ticket_count] %>
+        <%= form.submit "Select Ticket", class: "search-button" %>
+    <% else %>
+        <p class="no-flights-message">No flights available for the selected date.</p>
+    <% end %>
+
 <% end %>

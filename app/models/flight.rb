@@ -2,6 +2,7 @@ class Flight < ApplicationRecord
   # Associations.
   belongs_to :departure_airport, class_name: "Airport", foreign_key: "departure_airport_id"
   belongs_to :arrival_airport, class_name: "Airport", foreign_key: "arrival_airport_id"
+  has_many :flight_booking, class_name: "Booking", foreign_key: "flight_id"
 
   # Validations.
   validates :departure_airport, :arrival_airport, :flight_date_time, :flight_duration, presence: true
