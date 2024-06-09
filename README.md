@@ -16,3 +16,5 @@ New technique/skills/methods learnt
     1. Seeding database using db/seed.rb
     2. Simple validations.
     3. Understanding of association 
+        - Assoication was hard to get hold of but important thing here is to make wording consistent. 
+    4. Gained more knowledge on routing. 
