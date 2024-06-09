@@ -25,6 +25,8 @@ class FlightsController < ApplicationController
     end
   end
 
+
+
   private
 
   def search_params_valid?

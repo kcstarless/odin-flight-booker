@@ -101,3 +101,7 @@ select.search-dropdown {
   margin: 20px auto;
   color: #999;
 }
+
+fieldset {
+  width: 500px;
+}

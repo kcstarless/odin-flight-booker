@@ -1,0 +1,26 @@
+<h2>New Booking</h2>
+<% if @flight_info %>
+    <h3>Flight Information</h3>
+    <%= @flight_info.id %>
+    <%= @flight_info.flight_date_time %>
+    <%= @flight_info.departure_airport.airport_code %>
+    <%= @flight_info.arrival_airport.airport_code %>
+<% else %>
+    <P>No flight information available</p>
+<% end %>
+
+<%= form_with model: @booking do |form| %>
+    <%= form.hidden_field :flight_id, value: @flight_info.id %>
+    <h3>Passenger(s) Information</h3>  
+        <%= form.fields_for :passengers do |passenger_info| %>     
+            <fieldset>
+                <legend><%= "Passenger:" %></legend>
+                <%= passenger_info.label :name %>
+                <%= passenger_info.text_field :name %>
+                <%= passenger_info.label :email %>
+                <%= passenger_info.text_field :email %>
+            </fieldset><br>
+        <% end %>
+    <br><br>
+    <%= form.submit "Make Booking", class: "search-button" %>
+<% end %>

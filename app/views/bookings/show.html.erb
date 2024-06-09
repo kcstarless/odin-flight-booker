@@ -1,0 +1,15 @@
+<% if flash %>
+  <p class="alert"><%= flash[:success] %></p>
+<% end %>
+<h3>Flight Details</h3>
+Booking id: <%= @booking.id %><br>
+Flight Date: <%= @booking.flight.flight_date_time %><br>
+Departing Airport: <%= @booking.flight.departure_airport.airport_code %><br>
+Arriving Airport: <%= @booking.flight.arrival_airport.airport_code %><br>
+Flight duration: <%= @booking.flight.flight_duration %> min<br>
+
+<h3>Passenger(s)</h3>
+<% @booking.passengers.each do |passenger| %>
+  <%= passenger.name %><br>
+  <%= passenger.email %><br><br>
+<% end %>

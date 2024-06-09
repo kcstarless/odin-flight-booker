@@ -1,7 +1,7 @@
 <h2>Odin Flight Booker</h2>
 
-<% if flash[:alert] %>
-  <p class="alert"><%= flash[:alert] %></p>
+<% if flash %>
+  <p class="alert"><%= flash[:success] %></p>
 <% end %>
 
 <div class="form-container">
@@ -24,7 +24,7 @@
 </div>
 
 
-<%= form_with(url: flights_path, method: :get) do |form| %>
+<%= form_with(url: new_booking_path, method: :get) do |form| %>
     <% if @flights.present? %>
     <h2>All Available Flights</h2>
     <ul class="flights-list">
