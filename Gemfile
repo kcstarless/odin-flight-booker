@@ -67,3 +67,7 @@ group :test do
 end
 
 gem 'faker'
+
+gem "letter_opener", group: :development
+
+gem "tailwindcss-rails", "~> 2.6"
